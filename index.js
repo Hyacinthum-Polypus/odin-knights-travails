@@ -21,13 +21,13 @@ function generatePath(node, path = []) {
         return path;
     } else {
         path.unshift([node.x, node.y]);
-        generatePath(node, path);
+        return generatePath(node.parent, path);
     }
 }
 
 function knightsMoves(startingPosition, destination) {
     const queue = [Node(startingPosition[0], startingPosition[1], null)];
-    while (queue.length > 1) {
+    while (queue.length > 0) {
         if(queue[0].x == destination[0] && queue[0].y == destination[1]) break;
         for (let index = 0; index < moveDiff.length; index++) {
             const movement = moveDiff[index];
@@ -42,4 +42,4 @@ function knightsMoves(startingPosition, destination) {
     return generatePath(queue[0]);
 }
 
-console.log(knighhtsMoves([0,0],[1,2] == [[0,0],[1.2]]));
+console.log(knightsMoves([0,0],[1,2]));
