@@ -54,7 +54,7 @@ function prettyPrint(path) {
     console.log("=> You made it in " + (path.length - 1) + " moves! Here's your path:")
     for (let index = 0; index < path.length; index++) {
         const element = path[index];
-        console.log("  " + element);        
+        console.log("  [" + element[0] + "," + element[1] + "]");        
     }
 }
 
